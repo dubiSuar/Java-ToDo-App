@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="YourApp">
+        <attr name="navBackground" format="reference|color"/>
+    </declare-styleable>
+</resources>

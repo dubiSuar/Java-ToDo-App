@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Taskly" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:navigationBarColor">?android:colorBackground</item> <!-- Match system nav bar -->
+        <item name="android:windowLightNavigationBar">false</item> <!-- Light icons in dark mode -->
+        <item name="navBackground">@android:color/black</item> <!-- Black for dark mode -->
+    </style>
+
+    <style name="Theme.Taskly" parent="Base.Theme.Taskly" />
+</resources>
