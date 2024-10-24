@@ -1,14 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserFragment">
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:context=".MainActivity">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Header -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="User Page" />
+        android:id="@+id/header_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginStart="24dp"
+        android:text="Your Profile"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnBackground" />
 
-</FrameLayout>
+    <!-- Subheader -->
+    <TextView
+        android:id="@+id/subheader_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="26dp"
+        android:text="Personal Information"
+        android:textSize="18sp"
+        android:textColor="?attr/colorOnBackground" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="26dp"
+        android:layout_marginHorizontal="24dp"
+        android:background="?attr/colorOnBackground" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="40dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Centered Image -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/userpfp" />
+
+        <!-- NAME - Header 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="1dp" />
+
+        <!-- NAME - Subtext -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Juan Dela Cruz"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:layout_marginBottom="16dp" />
+
+        <!-- USERNAME - Header 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="1dp" />
+
+        <!-- USERNAME - Subtext -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sogood"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:layout_marginBottom="16dp" />
+
+        <!-- EMAIL - Header 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="1dp" />
+
+        <!-- EMAIL - Subtext -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="letranite@gmail.com"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Buttons Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp">
+
+        <!-- Change Password Button -->
+        <Button
+            android:id="@+id/btnChangePassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Change Password"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:backgroundTint="@color/purple"
+            android:textColor="@color/white"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Upload Picture Button -->
+        <Button
+            android:id="@+id/btnUploadProfilePicture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Upload Picture"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:backgroundTint="@color/purple"
+            android:textColor="@color/white"/>
+
+            </LinearLayout>
+        </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
