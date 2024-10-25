@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/taskTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add a New Task"
+        android:textSize="26dp"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/taskInputTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:inputType="textMultiLine"
+        android:lines="1"
+        android:maxLines="2"
+        android:gravity="top|start"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/input_bg" />
+
+    <EditText
+        android:id="@+id/taskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Task Description"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:maxLines="5"
+        android:gravity="top|start"
+        android:background="@drawable/input_bg" />
+
+    <!-- Horizontal layout for the small buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/btnImportant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flag_24px"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Icon 1"
+            android:padding="8dp" />
+
+        <ImageButton
+            android:id="@+id/btnDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/event_24px"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Icon 2"
+            android:padding="8dp" />
+
+        <ImageButton
+            android:id="@+id/btnPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/priority_24px"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Icon 3"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSaveTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Task"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

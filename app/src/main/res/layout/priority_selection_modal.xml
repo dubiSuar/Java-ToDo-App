@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:layout_gravity="start"
+        android:padding="8dp"/>
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Priority"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal" />
+
+    <!-- Priority Buttons -->
+    <Button
+        android:id="@+id/priority1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Priority 1"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/priority2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Priority 2"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/priority3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Priority 3" />
+
+</LinearLayout>
