@@ -2,12 +2,12 @@ package com.example.taskly;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class UserProfileActivity extends AppCompatActivity {
 
@@ -21,10 +21,19 @@ public class UserProfileActivity extends AppCompatActivity {
         // Initialize BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+        // Get the username from the intent
+        String username = getIntent().getStringExtra("username");
+
         // Set default fragment (optional, e.g., HomeFragment)
         if (savedInstanceState == null) {
+            // Pass username to UserFragment and load it
+            UserFragment userFragment = new UserFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("username", username); // Pass the username
+            userFragment.setArguments(bundle);
+
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new HomeFragment())
+                    .replace(R.id.fragment_container, userFragment)
                     .commit();
         }
 
@@ -44,7 +53,12 @@ public class UserProfileActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_search) {
                     selectedFragment = new SearchFragment();
                 } else if (id == R.id.nav_profile) {
-                    selectedFragment = new UserFragment();
+                    // Pass the username again when navigating to UserFragment
+                    UserFragment userFragment = new UserFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("username", username); // Pass the username
+                    userFragment.setArguments(bundle);
+                    selectedFragment = userFragment;
                 }
 
                 // Replace fragment if one is selected
@@ -55,6 +69,17 @@ public class UserProfileActivity extends AppCompatActivity {
                 }
 
                 return true;
+            }
+        });
+
+        // Initialize the Floating Action Button
+        FloatingActionButton btnAddTask = findViewById(R.id.btnAddTask);
+        btnAddTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Show the TaskBottomSheetFragment
+                TaskBottomSheetFragment taskBottomSheet = new TaskBottomSheetFragment();
+                taskBottomSheet.show(getSupportFragmentManager(), taskBottomSheet.getTag());
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.example.taskly;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextUsername, editTextPassword;
     private Button buttonLogin;
     private TextView tvRegister;
+    private Dialog loadingModal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +34,17 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.btnLogin);
         tvRegister = findViewById(R.id.tvRegister);
 
+        // Initialize the loading modal
+        loadingModal = new Dialog(this);
+        loadingModal.setContentView(R.layout.loading_modal);
+        loadingModal.setCancelable(false);
+
         // Login Button Click Listener
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validateUsername() && validatePassword()) {
+                    loadingModal.show(); // Show loading modal
                     checkUser();
                 }
             }
@@ -87,11 +95,12 @@ public class LoginActivity extends AppCompatActivity {
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                loadingModal.dismiss(); // Hide the loading modal
                 if (snapshot.exists()) {
                     String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
                     if (passwordFromDB != null && passwordFromDB.equals(userPassword)) {
-                        // Redirect to UserProfileActivity on success
                         Intent intent = new Intent(LoginActivity.this, UserProfileActivity.class);
+                        intent.putExtra("username", userUsername); // Pass the username
                         startActivity(intent);
                         finish();
                     } else {
@@ -106,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                loadingModal.dismiss();
                 Toast.makeText(LoginActivity.this, "Error occurred", Toast.LENGTH_SHORT).show();
             }
         });
