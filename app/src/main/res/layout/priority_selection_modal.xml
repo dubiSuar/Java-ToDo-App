@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/white">
+    android:layout_gravity="center"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+<LinearLayout
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="16dp">
+
+<!-- Back Button and Title Row -->
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="12dp">
 
     <!-- Back Button -->
     <ImageButton
@@ -14,8 +31,8 @@
         android:src="@drawable/baseline_arrow_back_ios_24"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Back"
-        android:layout_gravity="start"
-        android:padding="8dp"/>
+        android:padding="8dp"
+        app:tint="?attr/colorOnSurface" />
 
     <!-- Title -->
     <TextView
@@ -24,28 +41,59 @@
         android:text="Select Priority"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"
-        android:gravity="center_horizontal" />
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginStart="12dp" />
+</LinearLayout>
 
-    <!-- Priority Buttons -->
-    <Button
+<!-- Priority Buttons with Icons and Labels -->
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_marginTop="12dp">
+
+    <!-- Priority 1 - Red Button -->
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/priority1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Priority 1"
-        android:layout_marginBottom="8dp" />
+        android:textColor="?attr/colorOnSurface"
+        android:drawableLeft="@drawable/flag_24px"
+        android:drawableTint="@android:color/holo_red_dark"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="12dp"
+    android:layout_marginTop="8dp"
+    android:drawablePadding="8dp"/>
 
-    <Button
+    <!-- Priority 2 - Orange Button -->
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/priority2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Priority 2"
-        android:layout_marginBottom="8dp" />
+        android:textColor="?attr/colorOnSurface"
+        android:drawableLeft="@drawable/flag_24px"
+        android:drawableTint="@android:color/holo_orange_light"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="12dp"
+    android:layout_marginTop="8dp"
+    android:drawablePadding="8dp"/>
 
-    <Button
+    <!-- Priority 3 - Blue Button -->
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/priority3"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Priority 3" />
-
+        android:text="Priority 3"
+        android:textColor="?attr/colorOnSurface"
+        android:drawableLeft="@drawable/flag_24px"
+        android:drawableTint="@android:color/holo_blue_dark"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="12dp"
+    android:layout_marginTop="8dp"
+    android:drawablePadding="8dp"/>
 </LinearLayout>
+</LinearLayout>
+    </androidx.cardview.widget.CardView>

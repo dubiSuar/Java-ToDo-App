@@ -1378,6 +1378,8 @@ int color browser_actions_bg_grey 0x7f050028
 int color browser_actions_divider_color 0x7f050029
 int color browser_actions_text_color 0x7f05002a
 int color browser_actions_title_color 0x7f05002b
+int color buttonBackground 0x7f05031b
+int color buttonText 0x7f05031c
 int color button_material_dark 0x7f05002c
 int color button_material_light 0x7f05002d
 int color call_notification_answer_color 0x7f05002e
@@ -1386,6 +1388,7 @@ int color cardview_dark_background 0x7f050030
 int color cardview_light_background 0x7f050031
 int color cardview_shadow_end_color 0x7f050032
 int color cardview_shadow_start_color 0x7f050033
+int color colorOnBackground 0x7f05031d
 int color common_google_signin_btn_text_dark 0x7f050034
 int color common_google_signin_btn_text_dark_default 0x7f050035
 int color common_google_signin_btn_text_dark_disabled 0x7f050036
@@ -3030,6 +3033,7 @@ int drawable btn_radio_off_mtrl 0x7f070085
 int drawable btn_radio_off_to_on_mtrl_animation 0x7f070086
 int drawable btn_radio_on_mtrl 0x7f070087
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f070088
+int drawable button_outline 0x7f070113
 int drawable calendar 0x7f070089
 int drawable common_full_open_on_phone 0x7f07008a
 int drawable common_google_signin_btn_icon_dark 0x7f07008b
@@ -3281,7 +3285,6 @@ int id btnAddTask 0x7f08006d
 int id btnChangePassword 0x7f08006e
 int id btnDate 0x7f08006f
 int id btnGetStarted 0x7f080070
-int id btnImportant 0x7f080071
 int id btnLogin 0x7f080072
 int id btnLogout 0x7f080073
 int id btnPriority 0x7f080074

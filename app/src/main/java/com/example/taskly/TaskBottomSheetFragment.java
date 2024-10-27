@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.ImageButton; // Ensure this import is included
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -23,7 +23,7 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
         // Initialize views
         Button btnSaveTask = view.findViewById(R.id.btnSaveTask);
         EditText taskDescription = view.findViewById(R.id.taskDescription);
-        ImageButton btnPriority = view.findViewById(R.id.btnPriority);
+        Button btnPriority = view.findViewById(R.id.btnPriority); // Ensure this is a Button
 
         // Set click listener for the save button
         btnSaveTask.setOnClickListener(new View.OnClickListener() {
@@ -64,14 +64,14 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
         dialog.show();
 
         // Back button to close the dialog
-        ImageButton backButton = dialogView.findViewById(R.id.backButton);
+        ImageButton backButton = dialogView.findViewById(R.id.backButton); // Use ImageButton
         backButton.setOnClickListener(v -> dialog.dismiss());
 
         // Priority buttons with click listeners
         dialogView.findViewById(R.id.priority1).setOnClickListener(v -> {
             // Handle Priority 1 selection
             dialog.dismiss();
-            // Additional logic for Priority 1 (e.g., update priority field)
+            // Additional logic for Priority 1
         });
 
         dialogView.findViewById(R.id.priority2).setOnClickListener(v -> {

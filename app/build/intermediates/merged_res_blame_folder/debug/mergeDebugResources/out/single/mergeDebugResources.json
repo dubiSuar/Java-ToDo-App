@@ -84,10 +84,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.taskly.app-debug-40:/layout_priority_selection_modal.xml.flat",
-        "source": "com.example.taskly.app-main-42:/layout/priority_selection_modal.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_login.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\login.xml"
     },
@@ -102,10 +98,6 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_flag_24px.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\flag_24px.xml"
-    },
-    {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_fragment_user_old.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\fragment_user_old.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable-night_input_bg.xml.flat",
@@ -152,6 +144,10 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\appbgclear.png"
     },
     {
+        "merged": "com.example.taskly.app-debug-40:/layout_fragment_user.xml.flat",
+        "source": "com.example.taskly.app-main-42:/layout/fragment_user.xml"
+    },
+    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_input_bg.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\input_bg.xml"
     },
@@ -190,6 +186,10 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_fragment_search.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\fragment_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_button_outline.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\button_outline.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_logowhite.png.flat",

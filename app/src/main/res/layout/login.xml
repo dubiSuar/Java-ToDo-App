@@ -87,8 +87,8 @@
                 android:textStyle="bold"
                 android:padding="16dp"
                 android:backgroundTint="@color/purple"
-                android:textColor="?attr/colorOnBackground"
-            android:layout_gravity="center" />
+                android:textColor="@color/white"
+                android:layout_gravity="center" />
 
             <TextView
                 android:id="@+id/tvRegister"

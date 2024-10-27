@@ -1,9 +1,12 @@
 package com.example.taskly;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -82,5 +85,23 @@ public class UserProfileActivity extends AppCompatActivity {
                 taskBottomSheet.show(getSupportFragmentManager(), taskBottomSheet.getTag());
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("You're about to leave Taskly")
+                .setMessage("Are you sure you want to logout?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Redirect to the login page
+                        Intent intent = new Intent(UserProfileActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish(); // Optional: finish current activity
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 }

@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add a New Task"
-        android:textSize="26dp"
+        android:textSize="26sp"
         android:layout_marginBottom="16dp"
         android:textStyle="bold" />
 
@@ -37,41 +37,41 @@
         android:gravity="top|start"
         android:background="@drawable/input_bg" />
 
-    <!-- Horizontal layout for the small buttons -->
+    <!-- Horizontal layout for the buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="end"
+        android:gravity="start"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp">
 
-        <ImageButton
-            android:id="@+id/btnImportant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/flag_24px"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Icon 1"
-            android:padding="8dp" />
-
-        <ImageButton
+        <!-- Date Button with Image and Text -->
+        <Button
             android:id="@+id/btnDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/event_24px"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Icon 2"
-            android:padding="8dp" />
+            android:drawableLeft="@drawable/event_24px"
+            android:drawablePadding="8dp"
+            android:layout_marginRight="16dp"
+            android:text="Date"
+            android:background="@drawable/button_outline"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:textColor="?attr/colorOnSurface" />
 
-        <ImageButton
+        <!-- Priority Button with Image and Text -->
+        <Button
             android:id="@+id/btnPriority"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/priority_24px"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Icon 3"
-            android:padding="8dp" />
+            android:drawableLeft="@drawable/priority_24px"
+            android:drawablePadding="8dp"
+            android:text="Priority"
+            android:background="@drawable/button_outline"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:textColor="?attr/colorOnSurface" />
     </LinearLayout>
 
     <Button

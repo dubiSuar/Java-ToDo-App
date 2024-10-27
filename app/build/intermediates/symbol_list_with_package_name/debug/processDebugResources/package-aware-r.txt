@@ -1379,6 +1379,8 @@ color browser_actions_bg_grey
 color browser_actions_divider_color
 color browser_actions_text_color
 color browser_actions_title_color
+color buttonBackground
+color buttonText
 color button_material_dark
 color button_material_light
 color call_notification_answer_color
@@ -1387,6 +1389,7 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color colorOnBackground
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -3031,6 +3034,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_outline
 drawable calendar
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -3282,7 +3286,6 @@ id btnAddTask
 id btnChangePassword
 id btnDate
 id btnGetStarted
-id btnImportant
 id btnLogin
 id btnLogout
 id btnPriority
