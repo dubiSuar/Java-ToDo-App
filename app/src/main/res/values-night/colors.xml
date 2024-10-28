@@ -9,4 +9,8 @@
     <color name="colorOnBackground">#121212</color>
     <color name="buttonBackground">#1E1E1E</color>
     <color name="buttonText">#FFFFFF</color>
+
+    <color name="priority_high">#FF0000</color>
+    <color name="priority_medium">#FFA500</color>
+    <color name="priority_low">#008000</color>
 </resources>

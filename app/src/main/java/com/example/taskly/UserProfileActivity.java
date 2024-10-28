@@ -29,16 +29,12 @@ public class UserProfileActivity extends AppCompatActivity {
 
         // Set default fragment (optional, e.g., HomeFragment)
         if (savedInstanceState == null) {
-            // Pass username to UserFragment and load it
-            UserFragment userFragment = new UserFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString("username", username); // Pass the username
-            userFragment.setArguments(bundle);
-
+            // Load HomeFragment by default
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, userFragment)
+                    .replace(R.id.fragment_container, new HomeFragment())
                     .commit();
         }
+
 
         // Set listener for BottomNavigationView
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

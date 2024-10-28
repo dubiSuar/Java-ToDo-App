@@ -7,6 +7,9 @@
     <color name="gray">#B0B0B0</color>
     <color name="ic_launcher_background">#FFFFFF</color>
     <color name="navwhite">#FFFFFF</color>
+    <color name="priority_high">#FF0000</color>
+    <color name="priority_low">#008000</color>
+    <color name="priority_medium">#FFA500</color>
     <color name="purple">#9795F1</color>
     <color name="red">#ff6961</color>
     <color name="white">#FCFDFC</color>

@@ -8,6 +8,9 @@ color colorOnBackground
 color gray
 color ic_launcher_background
 color navwhite
+color priority_high
+color priority_low
+color priority_medium
 color purple
 color red
 color white
@@ -20,6 +23,9 @@ drawable bottom_sheet_background
 drawable browse
 drawable button_outline
 drawable calendar
+drawable circular_checkbox
+drawable circular_checkbox_checked
+drawable circular_checkbox_unchecked
 drawable event_24px
 drawable flag_24px
 drawable home
@@ -63,6 +69,7 @@ id nav_upcoming
 id priority1
 id priority2
 id priority3
+id recyclerViewTasks
 id reg_cpword
 id reg_firstname
 id reg_lastname
@@ -70,8 +77,12 @@ id reg_pword
 id reg_username
 id search_bar
 id subheader_text
+id taskDate
 id taskDescription
 id taskInputTitle
+id taskPriority
+id taskPriorityIcon
+id taskPriorityText
 id taskTitle
 id tvFullName
 id tvLogin
@@ -84,6 +95,7 @@ layout fragment_calendar
 layout fragment_home
 layout fragment_search
 layout fragment_user
+layout item_task
 layout loading_modal
 layout login
 layout priority_selection_modal
