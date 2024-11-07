@@ -3026,6 +3026,7 @@ drawable appicon
 drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_arrow_back_ios_24
+drawable baseline_arrow_circle_up_24
 drawable bottom_nav_menu
 drawable bottom_sheet_background
 drawable browse
@@ -3039,9 +3040,6 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_outline
 drawable calendar
-drawable circular_checkbox
-drawable circular_checkbox_checked
-drawable circular_checkbox_unchecked
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3291,6 +3289,8 @@ id browser_actions_menu_view
 id btnAddTask
 id btnChangePassword
 id btnDate
+id btnDelete
+id btnEdit
 id btnGetStarted
 id btnLogin
 id btnLogout
@@ -3372,6 +3372,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTaskTitle
 id editText_password
 id editText_username
 id edit_query
@@ -3681,6 +3682,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textViewCountdown
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3874,6 +3876,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_browse
 layout fragment_calendar
+layout fragment_edit_task
 layout fragment_home
 layout fragment_search
 layout fragment_user

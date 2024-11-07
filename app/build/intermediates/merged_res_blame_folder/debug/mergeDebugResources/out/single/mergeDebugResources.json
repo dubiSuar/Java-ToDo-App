@@ -16,10 +16,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\bottom_sheet_task.xml"
     },
     {
-        "merged": "com.example.taskly.app-debug-40:/layout_bottom_sheet_task.xml.flat",
-        "source": "com.example.taskly.app-main-42:/layout/bottom_sheet_task.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_search_fragment.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\search_fragment.xml"
     },
@@ -56,6 +52,10 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_baseline_arrow_circle_up_24.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\baseline_arrow_circle_up_24.xml"
+    },
+    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\menu_bottom_nav_menu.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\menu\\bottom_nav_menu.xml"
     },
@@ -78,6 +78,10 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_browse.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\browse.xml"
+    },
+    {
+        "merged": "com.example.taskly.app-debug-40:/layout_item_task.xml.flat",
+        "source": "com.example.taskly.app-main-42:/layout/item_task.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_activity_main.xml.flat",
@@ -246,6 +250,14 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_more_vert.png.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\more_vert.png"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_fragment_edit_task.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\fragment_edit_task.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_user_profile.xml.flat",

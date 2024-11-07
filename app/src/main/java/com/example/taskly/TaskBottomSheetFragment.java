@@ -32,6 +32,7 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
     // Interface for task listener
     public interface TaskListener {
         void onTaskAdded(String taskTitle, String taskText, String selectedPriority, String selectedDate);
+        void onTaskUpdated(String taskId, String taskTitle, String taskText, String selectedPriority, String selectedDate);
     }
 
     private DatabaseReference tasksRef;
@@ -40,6 +41,12 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
     private TaskListener taskListener; // Declare the listener
     private ImageView taskPriorityIcon; // Reference to the priority icon ImageView
     private TextView taskPriorityText; // Reference to the priority text View
+    private EditText taskInputTitle;
+    private EditText taskDescription;
+    private Button btnDate;
+    private Button btnPriority;
+    private Button btnSaveTask;
+    private String taskId; // Task ID to identify the task
 
     @Nullable
     @Override
@@ -47,13 +54,13 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
         View view = inflater.inflate(R.layout.bottom_sheet_task, container, false);
 
         // Initialize your views
-        Button btnSaveTask = view.findViewById(R.id.btnSaveTask);
-        EditText taskInputTitle = view.findViewById(R.id.taskInputTitle);
-        EditText taskDescription = view.findViewById(R.id.taskDescription);
-        Button btnPriority = view.findViewById(R.id.btnPriority);
-        Button btnDate = view.findViewById(R.id.btnDate);
-        taskPriorityIcon = view.findViewById(R.id.taskPriorityIcon); // Initialize the ImageView
-        taskPriorityText = view.findViewById(R.id.taskPriorityText); // Initialize the TextView
+        btnSaveTask = view.findViewById(R.id.btnSaveTask);
+        taskInputTitle = view.findViewById(R.id.taskInputTitle);
+        taskDescription = view.findViewById(R.id.taskDescription);
+        btnDate = view.findViewById(R.id.btnDate);
+        btnPriority = view.findViewById(R.id.btnPriority);
+        taskPriorityIcon = view.findViewById(R.id.taskPriorityIcon);
+        taskPriorityText = view.findViewById(R.id.taskPriorityText);
 
         // Initially hide the priority icon and text
         taskPriorityIcon.setVisibility(View.GONE);
@@ -68,22 +75,59 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
 
             if (TextUtils.isEmpty(taskTitle)) {
                 Toast.makeText(getContext(), "Please enter a task title", Toast.LENGTH_SHORT).show();
+            } else if (taskId != null) {
+                // If editing an existing task
+                editTaskToFirebase(taskTitle, taskText);
             } else {
                 saveTaskToFirebase(taskTitle, taskText);
-                dismiss(); // Close the bottom sheet
             }
+            dismiss(); // Close the bottom sheet
         });
 
         btnPriority.setOnClickListener(v -> showPrioritySelectionDialog());
-
-        btnDate.setOnClickListener(v -> showDatePickerDialog());
+        btnDate.setOnClickListener(v -> showDatePickerDialog()); // Use btnDate here
 
         return view;
     }
 
-    // Setter for the task listener
-    public void setTaskListener(TaskListener listener) {
-        this.taskListener = listener;
+    // Method to create a new instance of the fragment for adding a task
+    public static TaskBottomSheetFragment newInstance() {
+        return new TaskBottomSheetFragment();
+    }
+
+    // Method to create a new instance for editing a task
+    public static TaskBottomSheetFragment newInstance(Task task) {
+        TaskBottomSheetFragment fragment = new TaskBottomSheetFragment();
+        Bundle args = new Bundle();
+        args.putString("taskId", task.getId());
+        args.putString("taskTitle", task.getTitle());
+        args.putString("taskDescription", task.getDescription());
+        args.putString("taskPriority", task.getPriority());
+        args.putString("taskDate", task.getDate());
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Check if we are editing a task
+        if (getArguments() != null) {
+            taskId = getArguments().getString("taskId");
+            taskInputTitle.setText(getArguments().getString("taskTitle"));
+            taskDescription.setText(getArguments().getString("taskDescription"));
+            selectedPriority = getArguments().getString("taskPriority");
+            selectedDate = getArguments().getString("taskDate");
+            taskPriorityText.setText(selectedPriority); // Show selected priority
+            taskPriorityIcon.setVisibility(View.VISIBLE); // Show the icon
+            taskPriorityText.setVisibility(View.VISIBLE); // Show the text
+
+            // Pre-fill the date if available
+            if (!selectedDate.isEmpty()) {
+                btnDate.setText(selectedDate); // Set the date button text to the selected date
+            }
+        }
     }
 
     private void showPrioritySelectionDialog() {
@@ -99,31 +143,29 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
         backButton.setOnClickListener(v -> dialog.dismiss());
 
         dialogView.findViewById(R.id.priority1).setOnClickListener(v -> {
-            selectedPriority = "High";
-            taskPriorityIcon.setImageResource(R.drawable.flag_24px); // Update the icon
-            taskPriorityText.setText(selectedPriority); // Update the text
-            taskPriorityIcon.setVisibility(View.VISIBLE); // Show the icon
-            taskPriorityText.setVisibility(View.VISIBLE); // Show the text
+            selectedPriority = "High Priority";
+            updatePriorityIcon();
             dialog.dismiss();
         });
 
         dialogView.findViewById(R.id.priority2).setOnClickListener(v -> {
-            selectedPriority = "Medium";
-            taskPriorityIcon.setImageResource(R.drawable.flag_24px); // Update the icon
-            taskPriorityText.setText(selectedPriority); // Update the text
-            taskPriorityIcon.setVisibility(View.VISIBLE); // Show the icon
-            taskPriorityText.setVisibility(View.VISIBLE); // Show the text
+            selectedPriority = "Medium Priority";
+            updatePriorityIcon();
             dialog.dismiss();
         });
 
         dialogView.findViewById(R.id.priority3).setOnClickListener(v -> {
-            selectedPriority = "Low";
-            taskPriorityIcon.setImageResource(R.drawable.flag_24px); // Update the icon
-            taskPriorityText.setText(selectedPriority); // Update the text
-            taskPriorityIcon.setVisibility(View.VISIBLE); // Show the icon
-            taskPriorityText.setVisibility(View.VISIBLE); // Show the text
+            selectedPriority = "Low Priority";
+            updatePriorityIcon();
             dialog.dismiss();
         });
+    }
+
+    private void updatePriorityIcon() {
+        taskPriorityIcon.setImageResource(R.drawable.flag_24px); // Update the icon (you can customize based on priority)
+        taskPriorityText.setText(selectedPriority); // Update the text
+        taskPriorityIcon.setVisibility(View.VISIBLE); // Show the icon
+        taskPriorityText.setVisibility(View.VISIBLE); // Show the text
     }
 
     private void showDatePickerDialog() {
@@ -134,6 +176,8 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
                     calendar.set(year, month, dayOfMonth);
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                     selectedDate = dateFormat.format(calendar.getTime());
+                    // Update the button text with the selected date
+                    btnDate.setText(selectedDate); // Use btnDate here
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
@@ -171,5 +215,38 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
                         }
                     });
         }
+    }
+
+    private void editTaskToFirebase(String taskTitle, String taskText) {
+        String loggedInUsername = requireActivity().getIntent().getStringExtra("username"); // Get logged-in username
+        DatabaseReference userTasksRef = FirebaseDatabase.getInstance().getReference("users").child(loggedInUsername).child("tasks");
+
+        Map<String, Object> taskMap = new HashMap<>();
+        taskMap.put("title", taskTitle);
+        taskMap.put("description", taskText);
+        taskMap.put("priority", selectedPriority);
+        taskMap.put("date", selectedDate);
+
+        if (taskId != null) {
+            userTasksRef.child(taskId).updateChildren(taskMap)
+                    .addOnSuccessListener(aVoid -> {
+                        if (isAdded()) {
+                            Toast.makeText(requireContext(), "Task updated successfully", Toast.LENGTH_SHORT).show();
+                            // Notify listener about the updated task
+                            if (taskListener != null) {
+                                taskListener.onTaskUpdated(taskId, taskTitle, taskText, selectedPriority, selectedDate);
+                            }
+                        }
+                    })
+                    .addOnFailureListener(e -> {
+                        if (isAdded()) {
+                            Toast.makeText(requireContext(), "Failed to update task", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+    }
+
+    public void setTaskListener(TaskListener listener) {
+        this.taskListener = listener; // Set the task listener
     }
 }

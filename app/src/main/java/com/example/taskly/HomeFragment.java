@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements TaskBottomSheetFragment.TaskListener {
+public class HomeFragment extends Fragment implements TaskBottomSheetFragment.TaskListener, TaskAdapter.OnTaskInteractionListener {
 
     private RecyclerView recyclerViewTasks;
     private TaskAdapter taskAdapter;
@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment implements TaskBottomSheetFragment.Ta
         recyclerViewTasks = view.findViewById(R.id.recyclerViewTasks);
         recyclerViewTasks.setLayoutManager(new LinearLayoutManager(getContext()));
         taskList = new ArrayList<>();
-        taskAdapter = new TaskAdapter(taskList);
+        taskAdapter = new TaskAdapter(taskList, this);
         recyclerViewTasks.setAdapter(taskAdapter);
 
         // Initialize Firebase Database reference to specific user's tasks
@@ -65,11 +65,69 @@ public class HomeFragment extends Fragment implements TaskBottomSheetFragment.Ta
         return view;
     }
 
+    private void openTaskBottomSheet(Task task) {
+        TaskBottomSheetFragment taskBottomSheetFragment;
+        if (task == null) {
+            taskBottomSheetFragment = TaskBottomSheetFragment.newInstance(); // For adding a new task
+        } else {
+            taskBottomSheetFragment = TaskBottomSheetFragment.newInstance(task); // For editing an existing task
+        }
+
+        taskBottomSheetFragment.setTaskListener(this); // Set the listener
+        taskBottomSheetFragment.show(getChildFragmentManager(), taskBottomSheetFragment.getTag());
+    }
+
     @Override
     public void onTaskAdded(String taskTitle, String taskText, String selectedPriority, String selectedDate) {
-        // Create a new Task object
-        Task newTask = new Task(taskTitle, taskText, selectedPriority, selectedDate);
-        taskList.add(newTask); // Add the task to the list
-        taskAdapter.notifyItemInserted(taskList.size() - 1); // Notify adapter of the new item
+        // Add the new task to your local task list and update UI
+        Task newTask = new Task(); // Create a new Task object
+        newTask.setId("someUniqueId"); // Set a unique ID (use actual ID from Firebase)
+        newTask.setTitle(taskTitle);
+        newTask.setDescription(taskText);
+        newTask.setPriority(selectedPriority);
+        newTask.setDate(selectedDate);
+
+        // Add the new task to the list and update the RecyclerView
+        taskList.add(newTask);
+        taskAdapter.notifyDataSetChanged(); // Notify adapter about the new item
+    }
+
+    @Override
+    public void onTaskUpdated(String taskId, String taskTitle, String taskText, String selectedPriority, String selectedDate) {
+        // Find the existing task and update it
+        for (Task task : taskList) {
+            if (task.getId().equals(taskId)) {
+                task.setTitle(taskTitle);
+                task.setDescription(taskText);
+                task.setPriority(selectedPriority);
+                task.setDate(selectedDate);
+                break;
+            }
+        }
+        taskAdapter.notifyDataSetChanged(); // Notify adapter about the update
+    }
+
+
+    @Override
+    public void onEditTask(Task task) {
+        // Create a new instance of TaskBottomSheetFragment for editing
+        TaskBottomSheetFragment editTaskFragment = TaskBottomSheetFragment.newInstance(task);
+
+        // Show the fragment
+        editTaskFragment.show(getChildFragmentManager(), "EditTaskFragment");
+    }
+
+
+    @Override
+    public void onDeleteTask(Task task) {
+        tasksRef.child(task.getId()).removeValue().addOnCompleteListener(task1 -> {
+            if (task1.isSuccessful()) {
+                Toast.makeText(getContext(), "Task deleted", Toast.LENGTH_SHORT).show();
+                taskList.remove(task);
+                taskAdapter.notifyDataSetChanged();
+            } else {
+                Toast.makeText(getContext(), "Failed to delete task", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

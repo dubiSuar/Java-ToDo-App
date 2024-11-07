@@ -18,14 +18,12 @@ drawable appbg
 drawable appbgclear
 drawable appicon
 drawable baseline_arrow_back_ios_24
+drawable baseline_arrow_circle_up_24
 drawable bottom_nav_menu
 drawable bottom_sheet_background
 drawable browse
 drawable button_outline
 drawable calendar
-drawable circular_checkbox
-drawable circular_checkbox_checked
-drawable circular_checkbox_unchecked
 drawable event_24px
 drawable flag_24px
 drawable home
@@ -47,6 +45,8 @@ id bottom_navigation
 id btnAddTask
 id btnChangePassword
 id btnDate
+id btnDelete
+id btnEdit
 id btnGetStarted
 id btnLogin
 id btnLogout
@@ -54,6 +54,7 @@ id btnPriority
 id btnRegister
 id btnSaveTask
 id btnUploadProfilePicture
+id editTaskTitle
 id editText_password
 id editText_username
 id fragment_container
@@ -84,6 +85,7 @@ id taskPriority
 id taskPriorityIcon
 id taskPriorityText
 id taskTitle
+id textViewCountdown
 id tvFullName
 id tvLogin
 id tvRegister
@@ -92,6 +94,7 @@ layout activity_main
 layout bottom_sheet_task
 layout fragment_browse
 layout fragment_calendar
+layout fragment_edit_task
 layout fragment_home
 layout fragment_search
 layout fragment_user

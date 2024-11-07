@@ -41,8 +41,7 @@ android:padding="16dp">
         android:text="Select Priority"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="?attr/colorOnSurface"
-        android:layout_marginStart="12dp" />
+        android:textColor="?attr/colorOnSurface" />
 </LinearLayout>
 
 <!-- Priority Buttons with Icons and Labels -->
@@ -58,7 +57,7 @@ android:padding="16dp">
         android:id="@+id/priority1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Priority 1"
+        android:text="High Priority"
         android:textColor="?attr/colorOnSurface"
         android:drawableLeft="@drawable/flag_24px"
         android:drawableTint="@android:color/holo_red_dark"
@@ -72,7 +71,7 @@ android:padding="16dp">
         android:id="@+id/priority2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Priority 2"
+        android:text="Medium Priority"
         android:textColor="?attr/colorOnSurface"
         android:drawableLeft="@drawable/flag_24px"
         android:drawableTint="@android:color/holo_orange_light"
@@ -86,7 +85,7 @@ android:padding="16dp">
         android:id="@+id/priority3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Priority 3"
+        android:text="Low Priority"
         android:textColor="?attr/colorOnSurface"
         android:drawableLeft="@drawable/flag_24px"
         android:drawableTint="@android:color/holo_blue_dark"
