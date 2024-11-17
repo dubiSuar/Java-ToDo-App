@@ -4,12 +4,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_search.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\search.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_item_task.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\item_task.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_search.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\search.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_bottom_sheet_task.xml.flat",
@@ -18,10 +18,6 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_search_fragment.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\search_fragment.xml"
-    },
-    {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_circular_checkbox_unchecked.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\circular_checkbox_unchecked.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -48,12 +44,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_baseline_arrow_circle_up_24.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\baseline_arrow_circle_up_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\menu_bottom_nav_menu.xml.flat",
@@ -80,10 +76,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\browse.xml"
     },
     {
-        "merged": "com.example.taskly.app-debug-40:/layout_item_task.xml.flat",
-        "source": "com.example.taskly.app-main-42:/layout/item_task.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\activity_main.xml"
     },
@@ -100,10 +92,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_circular_checkbox_checked.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\circular_checkbox_checked.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_login.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\layout\\login.xml"
     },
@@ -118,6 +106,10 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_flag_24px.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\flag_24px.xml"
+    },
+    {
+        "merged": "com.example.taskly.app-debug-40:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.taskly.app-main-42:/menu/bottom_nav_menu.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable-night_input_bg.xml.flat",
@@ -216,10 +208,6 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\bottom_sheet_background.xml"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_circular_checkbox.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\circular_checkbox.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
@@ -250,10 +238,6 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\drawable_more_vert.png.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-42:\\drawable\\more_vert.png"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-40:\\layout_fragment_edit_task.xml.flat",

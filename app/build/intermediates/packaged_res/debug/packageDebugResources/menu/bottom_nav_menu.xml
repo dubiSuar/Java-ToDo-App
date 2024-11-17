@@ -9,12 +9,13 @@
     <item
         android:icon="@drawable/calendar"
         android:id="@+id/nav_calendar"
-        android:title="Upcoming" />
+        android:title="Calendar View" />
 
-    <item
+    <!-- Removed the Add Task item here -->
+    <!-- <item
         android:icon="@drawable/browse"
         android:id="@+id/nav_browse"
-        android:title="Browse" />
+        android:title="Add Task" /> -->
 
     <item
         android:icon="@drawable/search"
@@ -25,6 +26,5 @@
         android:icon="@drawable/user"
         android:id="@+id/nav_profile"
         android:title="Profile" />
-
 
 </menu>

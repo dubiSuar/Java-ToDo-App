@@ -15,6 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class UserProfileActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+    private FloatingActionButton btnAddTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,9 @@ public class UserProfileActivity extends AppCompatActivity {
 
         // Initialize BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        // Initialize the Floating Action Button (FAB) for Add Task
+        btnAddTask = findViewById(R.id.btnAddTask);
 
         // Get the username from the intent
         String username = getIntent().getStringExtra("username");
@@ -35,7 +39,6 @@ public class UserProfileActivity extends AppCompatActivity {
                     .commit();
         }
 
-
         // Set listener for BottomNavigationView
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -45,12 +48,13 @@ public class UserProfileActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 if (id == R.id.nav_home) {
                     selectedFragment = new HomeFragment();
+                    setFABVisibility(true); // Show FAB in HomeFragment
                 } else if (id == R.id.nav_calendar) {
                     selectedFragment = new CalendarFragment();
-                } else if (id == R.id.nav_browse) {
-                    selectedFragment = new BrowseFragment();
+                    setFABVisibility(false); // Hide FAB in CalendarFragment
                 } else if (id == R.id.nav_search) {
                     selectedFragment = new SearchFragment();
+                    setFABVisibility(false); // Hide FAB in SearchFragment
                 } else if (id == R.id.nav_profile) {
                     // Pass the username again when navigating to UserFragment
                     UserFragment userFragment = new UserFragment();
@@ -58,6 +62,7 @@ public class UserProfileActivity extends AppCompatActivity {
                     bundle.putString("username", username); // Pass the username
                     userFragment.setArguments(bundle);
                     selectedFragment = userFragment;
+                    setFABVisibility(false); // Hide FAB in Profile Fragment
                 }
 
                 // Replace fragment if one is selected
@@ -71,8 +76,7 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
-        // Initialize the Floating Action Button
-        FloatingActionButton btnAddTask = findViewById(R.id.btnAddTask);
+        // Set FAB click listener
         btnAddTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +85,15 @@ public class UserProfileActivity extends AppCompatActivity {
                 taskBottomSheet.show(getSupportFragmentManager(), taskBottomSheet.getTag());
             }
         });
+    }
+
+    // Helper method to control FAB visibility
+    private void setFABVisibility(boolean isVisible) {
+        if (isVisible) {
+            btnAddTask.setVisibility(View.VISIBLE);
+        } else {
+            btnAddTask.setVisibility(View.GONE);
+        }
     }
 
     @Override

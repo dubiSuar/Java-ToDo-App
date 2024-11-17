@@ -77,6 +77,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array sort_options
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -3300,6 +3301,7 @@ id btnSaveTask
 id btnUploadProfilePicture
 id buttonPanel
 id cache_measures
+id calendarView
 id callMeasure
 id cancel_button
 id carryVelocity
@@ -3579,7 +3581,7 @@ id radio
 id ratio
 id rectangles
 id recyclerViewTasks
-id reg_cpword
+id reg_confirm_pword
 id reg_firstname
 id reg_lastname
 id reg_pword
@@ -3629,6 +3631,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id sortSpinner
 id south
 id spacer
 id special_effects_controller_view_tag
@@ -4037,7 +4040,6 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description

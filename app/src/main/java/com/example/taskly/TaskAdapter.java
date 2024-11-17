@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+
 import java.util.List;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
@@ -75,6 +77,23 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     @Override
     public int getItemCount() {
         return taskList.size();
+    }
+
+    // Method to update the task list dynamically
+    public void updateTaskList(List<Task> updatedTaskList) {
+        this.taskList = updatedTaskList;
+        notifyDataSetChanged();  // Notify the adapter that the dataset has changed
+    }
+
+    // Method to filter tasks by date
+    public void filterTasksByDate(String selectedDate) {
+        List<Task> filteredList = new ArrayList<>();
+        for (Task task : taskList) {
+            if (task.getDate().equals(selectedDate)) {
+                filteredList.add(task);  // Add tasks with matching date
+            }
+        }
+        updateTaskList(filteredList);  // Update the list with the filtered tasks
     }
 
     public static class TaskViewHolder extends RecyclerView.ViewHolder {

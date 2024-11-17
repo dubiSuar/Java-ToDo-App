@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+array sort_options
 attr? navBackground
 color black
 color buttonBackground
@@ -54,6 +55,7 @@ id btnPriority
 id btnRegister
 id btnSaveTask
 id btnUploadProfilePicture
+id calendarView
 id editTaskTitle
 id editText_password
 id editText_username
@@ -71,12 +73,13 @@ id priority1
 id priority2
 id priority3
 id recyclerViewTasks
-id reg_cpword
+id reg_confirm_pword
 id reg_firstname
 id reg_lastname
 id reg_pword
 id reg_username
 id search_bar
+id sortSpinner
 id subheader_text
 id taskDate
 id taskDescription
@@ -115,7 +118,6 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello_blank_fragment
 string project_id
 style Base.Theme.Taskly
 style Theme.Taskly

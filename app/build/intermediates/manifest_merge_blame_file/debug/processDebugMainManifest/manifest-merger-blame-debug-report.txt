@@ -9,8 +9,8 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-11-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:5:5-77
-11-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:5:22-74
+11-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:5:5-77
+11-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:5:22-74
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\USER\.gradle\caches\8.9\transforms\ca81b8a749d77115ea9c784b7ed71f4b\transformed\firebase-auth-23.1.0\AndroidManifest.xml:25:5-67
 12-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\USER\.gradle\caches\8.9\transforms\ca81b8a749d77115ea9c784b7ed71f4b\transformed\firebase-auth-23.1.0\AndroidManifest.xml:25:22-64
@@ -33,69 +33,69 @@
 20-->[androidx.core:core:1.13.0] C:\Users\USER\.gradle\caches\8.9\transforms\948fe329796e63638e608cd1a5454cfb\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 21
 22    <application
-22-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:6:5-41:19
+22-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:6:5-41:19
 23        android:allowBackup="true"
-23-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:7:9-35
+23-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:7:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 24-->[androidx.core:core:1.13.0] C:\Users\USER\.gradle\caches\8.9\transforms\948fe329796e63638e608cd1a5454cfb\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 25        android:dataExtractionRules="@xml/data_extraction_rules"
-25-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:8:9-65
+25-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:8:9-65
 26        android:debuggable="true"
 27        android:extractNativeLibs="false"
 28        android:fullBackupContent="@xml/backup_rules"
-28-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:9:9-54
+28-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:9:9-54
 29        android:icon="@mipmap/ic_launcher"
-29-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:10:9-43
+29-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:10:9-43
 30        android:label="@string/app_name"
-30-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:11:9-41
+30-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:11:9-41
 31        android:roundIcon="@mipmap/ic_launcher_round"
-31-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:12:9-54
+31-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:12:9-54
 32        android:supportsRtl="true"
-32-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:13:9-35
+32-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:13:9-35
 33        android:testOnly="true"
 34        android:theme="@style/Theme.Taskly" >
-34-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:14:9-44
+34-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:14:9-44
 35
 36        <!-- MainActivity declaration with the LAUNCHER intent -->
 37        <activity
-37-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:18:9-25:20
+37-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:18:9-25:20
 38            android:name="com.example.taskly.MainActivity"
-38-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:19:13-41
+38-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:19:13-41
 39            android:exported="true" >
-39-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:20:13-36
+39-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:20:13-36
 40            <intent-filter>
-40-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:21:13-24:29
+40-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:21:13-24:29
 41                <action android:name="android.intent.action.MAIN" />
-41-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:22:17-69
-41-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:22:25-66
+41-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:22:17-69
+41-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:22:25-66
 42
 43                <category android:name="android.intent.category.LAUNCHER" />
-43-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:23:17-77
-43-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:23:27-74
+43-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:23:17-77
+43-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:23:27-74
 44            </intent-filter>
 45        </activity>
 46
 47        <!-- Add the actvities here -->
 48        <activity
-48-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:28:9-31:20
+48-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:28:9-31:20
 49            android:name="com.example.taskly.LoginActivity"
-49-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:29:13-42
+49-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:29:13-42
 50            android:exported="true" >
-50-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:30:13-36
+50-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:30:13-36
 51        </activity>
 52        <activity
-52-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:32:9-35:20
+52-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:32:9-35:20
 53            android:name="com.example.taskly.UserProfileActivity"
-53-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:33:13-48
+53-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:33:13-48
 54            android:exported="true" >
-54-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:34:13-36
+54-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:34:13-36
 55        </activity>
 56        <activity
-56-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:36:9-39:20
+56-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:36:9-39:20
 57            android:name="com.example.taskly.RegisterActivity"
-57-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:37:13-45
+57-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:37:13-45
 58            android:exported="true" >
-58-->E:\01 ANDROID STUDIO FILES\Taskly\app\src\main\AndroidManifest.xml:38:13-36
+58-->E:\01 ANDROID STUDIO FILES\Working CRUD\app\src\main\AndroidManifest.xml:38:13-36
 59        </activity>
 60        <activity
 60-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\USER\.gradle\caches\8.9\transforms\ca81b8a749d77115ea9c784b7ed71f4b\transformed\firebase-auth-23.1.0\AndroidManifest.xml:29:9-46:20

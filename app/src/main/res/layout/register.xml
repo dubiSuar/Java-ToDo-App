@@ -106,7 +106,7 @@
 
             <!-- Confirm Password field -->
             <EditText
-                android:id="@+id/reg_cpword"
+                android:id="@+id/reg_confirm_pword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Confirm Password"
