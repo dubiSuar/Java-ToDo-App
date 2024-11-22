@@ -32,7 +32,20 @@
     <android.widget.CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="294dp" />
+
+    <!-- "No tasks" message -->
+    <TextView
+        android:id="@+id/textViewNoTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_margin="32dp"
+        android:text="No tasks on this date"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="?attr/colorOnBackground"
+        android:visibility="gone" />
 
     <!-- RecyclerView to display tasks for the selected date -->
     <androidx.recyclerview.widget.RecyclerView

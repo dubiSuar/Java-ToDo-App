@@ -33,11 +33,31 @@
         android:textColor="?attr/colorOnBackground" />
 
     <!-- Spinner for sorting options -->
-    <Spinner
-        android:id="@+id/sortSpinner"
-        android:layout_width="84dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp" />
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical">
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/sortLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Tasks By"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnBackground"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Spinner -->
+        <Spinner
+            android:id="@+id/sortSpinner"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
 
     <!-- RecyclerView for tasks -->
     <androidx.recyclerview.widget.RecyclerView

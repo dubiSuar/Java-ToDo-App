@@ -22,7 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class HomeFragment extends Fragment implements TaskBottomSheetFragment.TaskListener, TaskAdapter.OnTaskInteractionListener {
 
@@ -53,23 +55,23 @@ public class HomeFragment extends Fragment implements TaskBottomSheetFragment.Ta
         tasksRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                taskList.clear();
+                taskList.clear(); // Clear the list before adding tasks
                 for (DataSnapshot taskSnapshot : snapshot.getChildren()) {
                     Task task = taskSnapshot.getValue(Task.class);
-                    if (task != null) {
-                        taskList.add(task);
+                    if (task != null && "In Progress".equals(task.getStatus())) {
+                        taskList.add(task); // Add only "In Progress" tasks
                     }
                 }
-                sortTasks();  // Sort after tasks are fetched from Firebase
-                taskAdapter.notifyDataSetChanged();
+                sortTasks(); // Sort tasks if needed
+                taskAdapter.notifyDataSetChanged(); // Notify adapter of data changes
             }
-
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(getContext(), "Failed to load tasks.", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         // Set up the Spinner for sorting options
         sortSpinner = view.findViewById(R.id.sortSpinner);
@@ -218,4 +220,36 @@ public class HomeFragment extends Fragment implements TaskBottomSheetFragment.Ta
             }
         });
     }
+
+    @Override
+    public void onUpdateTaskStatus(Task task) {
+        // Retrieve the logged-in username from arguments or shared preferences
+        String loggedInUsername = requireActivity().getIntent().getStringExtra("username"); // Or use shared preferences if needed
+
+        // Ensure logged-in username is available
+        if (loggedInUsername == null || loggedInUsername.isEmpty()) {
+            Toast.makeText(getContext(), "Username not found", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Reference to the user's tasks in Firebase
+        DatabaseReference userTasksRef = FirebaseDatabase.getInstance().getReference("users")
+                .child(loggedInUsername).child("tasks");
+
+        // Prepare the task data to be updated (just the status field)
+        Map<String, Object> taskMap = new HashMap<>();
+        taskMap.put("status", "Completed"); // Update the status to "Completed"
+
+        // Update the task status under the specific task node using task ID
+        userTasksRef.child(task.getId()).updateChildren(taskMap)
+                .addOnSuccessListener(aVoid -> {
+                    // Handle success
+                    Toast.makeText(getContext(), "Task marked as completed", Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    // Handle failure
+                    Toast.makeText(getContext(), "Failed to update task", Toast.LENGTH_SHORT).show();
+                });
+    }
+
 }

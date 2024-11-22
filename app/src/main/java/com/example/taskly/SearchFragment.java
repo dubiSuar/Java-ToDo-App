@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchFragment extends Fragment {
+public class SearchFragment extends Fragment implements TaskAdapter.OnTaskInteractionListener{
 
     private EditText searchBar;
     private RecyclerView recyclerViewTasks;
@@ -87,6 +87,37 @@ public class SearchFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onEditTask(Task task) {
+        // Handle editing the task (for example, show a bottom sheet dialog for editing)
+        TaskBottomSheetFragment editTaskFragment = TaskBottomSheetFragment.newInstance(task);
+        editTaskFragment.show(getChildFragmentManager(), "EditTaskFragment");
+    }
+
+    @Override
+    public void onDeleteTask(Task task) {
+        // Handle task deletion
+        tasksRef.child(task.getId()).removeValue().addOnCompleteListener(task1 -> {
+            if (task1.isSuccessful()) {
+                Toast.makeText(getContext(), "Task deleted", Toast.LENGTH_SHORT).show();
+                taskList.remove(task);
+                taskAdapter.notifyDataSetChanged(); // Refresh the list
+            } else {
+                Toast.makeText(getContext(), "Failed to delete task", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    public void onUpdateTaskStatus(Task task) {
+        // Handle task status update
+        tasksRef.child(task.getId()).child("status").setValue("Completed")
+                .addOnSuccessListener(aVoid -> Toast.makeText(getContext(), "Task completed", Toast.LENGTH_SHORT).show())
+                .addOnFailureListener(e -> Toast.makeText(getContext(), "Failed to update task", Toast.LENGTH_SHORT).show());
+    }
+
+
+
     // Filter tasks based on the search query
     private void filterTasks(String query) {
         List<Task> filteredList = new ArrayList<>();
@@ -97,4 +128,5 @@ public class SearchFragment extends Fragment {
         }
         taskAdapter.updateTaskList(filteredList);  // Update the adapter with the filtered list
     }
+
 }

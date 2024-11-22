@@ -5,9 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 import java.util.List;
@@ -33,10 +39,17 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     @Override
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
         Task task = taskList.get(position);
+
+
+
         holder.taskTitle.setText(task.getTitle());
         holder.taskDescription.setText(task.getDescription());
         holder.taskDate.setText(task.getDate());
+        holder.taskStatus.setText(task.getStatus());
 
+        if (task.getStatus().equals("Completed")) {
+            holder.btnComplete.setVisibility(View.GONE); // Hide button if completed
+        }
         // Set priority color based on the priority level
         switch (task.getPriority()) {
             case "High Priority":
@@ -72,6 +85,39 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                         .show();
             }
         });
+
+        holder.btnComplete.setOnClickListener(v -> {
+            // Update the task status locally
+            task.setStatus("Completed");
+            holder.taskStatus.setText("Status: Completed");
+            holder.btnComplete.setVisibility(View.GONE); // Hide the Complete button
+
+            // Update the status in Firebase
+            DatabaseReference taskRef = FirebaseDatabase.getInstance().getReference("tasks").child(task.getId());
+            taskRef.child("status").setValue("Completed")
+                    .addOnSuccessListener(aVoid -> {
+                        // Notify interaction listener (optional)
+                        if (taskInteractionListener != null) {
+                            taskInteractionListener.onUpdateTaskStatus(task); // Notify listener if required
+                        }
+                        // Show feedback
+                        Toast.makeText(holder.itemView.getContext(), "Task marked as Completed", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(e -> {
+                        // Handle failure to update status in Firebase
+                        Toast.makeText(holder.itemView.getContext(), "Failed to update task status", Toast.LENGTH_SHORT).show();
+                    });
+
+            // Update user-specific task node (optional if using user-specific tasks)
+            DatabaseReference userTaskRef = FirebaseDatabase.getInstance()
+                    .getReference("users")
+                    .child(task.getUsername())
+                    .child("tasks")
+                    .child(task.getId());
+            userTaskRef.child("status").setValue("Completed");
+        });
+
+
     }
 
     @Override
@@ -97,7 +143,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     }
 
     public static class TaskViewHolder extends RecyclerView.ViewHolder {
-        TextView taskTitle, taskDescription, taskPriority, taskDate, btnEdit, btnDelete;
+        TextView taskTitle, taskDescription, taskPriority, taskDate, btnEdit, btnDelete, taskStatus, btnComplete;
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -107,6 +153,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             taskDate = itemView.findViewById(R.id.taskDate);
             btnEdit = itemView.findViewById(R.id.btnEdit);
             btnDelete = itemView.findViewById(R.id.btnDelete);
+            taskStatus = itemView.findViewById(R.id.taskStatus);
+            btnComplete = itemView.findViewById(R.id.btnComplete);
         }
     }
 
@@ -114,5 +162,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public interface OnTaskInteractionListener {
         void onEditTask(Task task);
         void onDeleteTask(Task task);
+        void onUpdateTaskStatus(Task task);
     }
 }

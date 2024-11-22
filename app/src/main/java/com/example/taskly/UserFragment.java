@@ -24,6 +24,7 @@ public class UserFragment extends Fragment {
 
     private Button btnLogout;
     private TextView tvFullName, tvUsername;
+    private Button btnHistory;
 
     @Nullable
     @Override
@@ -34,6 +35,7 @@ public class UserFragment extends Fragment {
         btnLogout = view.findViewById(R.id.btnLogout);
         tvFullName = view.findViewById(R.id.tvFullName);
         tvUsername = view.findViewById(R.id.tvUsername);
+        btnHistory = view.findViewById(R.id.btnHistory);
 
         // Load user data from Firebase
         loadUserData();
@@ -53,8 +55,21 @@ public class UserFragment extends Fragment {
             }
         });
 
+        btnHistory.setOnClickListener(v -> {
+            // Navigate to the HistoryFragment
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new HistoryFragment()) // Replace with your container ID
+                    .addToBackStack(null) // Allow navigation back
+                    .commit();
+        });
+
+
         return view;
+
     }
+
+
+
 
     private void loadUserData() {
         // Get the current user's username from shared preferences or passed intent

@@ -34,13 +34,6 @@
         android:textSize="18sp"
         android:textColor="?attr/colorOnBackground" />
 
-<!--    <View-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="1dp"-->
-<!--        android:layout_marginBottom="26dp"-->
-<!--        android:layout_marginHorizontal="24dp"-->
-<!--        android:background="?attr/colorOnBackground" />-->
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,111 +42,88 @@
         android:layout_marginHorizontal="24dp"
         android:layout_marginVertical="8dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
-
-        <!-- Easter Egg :) -->
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="150dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            app:srcCompat="@drawable/userpfp" />-->
-
-        <!-- NAME - Header 2 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="1dp" />
-
-        <!-- NAME - Subtext -->
-        <TextView
-            android:id="@+id/tvFullName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="12sp"
-            android:textStyle="normal"
-            android:layout_marginBottom="16dp" />
-
-        <!-- USERNAME - Header 2 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Username"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="1dp" />
-
-        <!-- USERNAME - Subtext -->
-        <TextView
-            android:id="@+id/tvUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="12sp"
-            android:textStyle="normal"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Buttons Container -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="24dp">
+            android:orientation="vertical"
+            android:padding="24dp">
 
-            <!-- Change Password Button -->
-            <Button
-                android:id="@+id/btnChangePassword"
-                android:layout_width="0dp"
+            <!-- NAME - Header 2 -->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Change Password"
+                android:text="Name"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:padding="16dp"
-                android:backgroundTint="@color/purple"
-                android:textColor="@color/white"
-                android:layout_marginEnd="8dp" />
+                android:layout_marginBottom="1dp" />
 
-            <!-- Upload Picture Button -->
-            <Button
-                android:id="@+id/btnUploadProfilePicture"
-                android:layout_width="0dp"
+            <!-- NAME - Subtext -->
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Upload Picture"
+                android:text=""
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_marginBottom="16dp" />
+
+            <!-- USERNAME - Header 2 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:padding="16dp"
-                android:backgroundTint="@color/purple"
-                android:textColor="@color/white" />
+                android:layout_marginBottom="1dp" />
+
+            <!-- USERNAME - Subtext -->
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_marginBottom="16dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="24dp">
+
+
+
+                <!-- History Button -->
+                <Button
+                    android:id="@+id/btnHistory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Task History"
+                    android:textStyle="bold"
+                    android:padding="16dp"
+                    android:backgroundTint="@color/purple"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="8dp" />
+
+                <!--  Logout Button -->
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Logout"
+                    android:textStyle="bold"
+                    android:padding="16dp"
+                    android:backgroundTint="#FF6961"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+
         </LinearLayout>
-
-        <!-- Logout Button (aligned to the right) -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="16dp">
-
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:backgroundTint="#FF6961"
-            android:textColor="@color/white" />
-    </LinearLayout>
-</LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+</LinearLayout>

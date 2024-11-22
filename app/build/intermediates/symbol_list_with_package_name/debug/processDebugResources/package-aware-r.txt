@@ -3026,6 +3026,7 @@ drawable appbgclear
 drawable appicon
 drawable avd_hide_password
 drawable avd_show_password
+drawable baseline_add_to_photos_24
 drawable baseline_arrow_back_ios_24
 drawable baseline_arrow_circle_up_24
 drawable bottom_nav_menu
@@ -3288,17 +3289,17 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btnAddTask
-id btnChangePassword
+id btnComplete
 id btnDate
 id btnDelete
 id btnEdit
 id btnGetStarted
+id btnHistory
 id btnLogin
 id btnLogout
 id btnPriority
 id btnRegister
 id btnSaveTask
-id btnUploadProfilePicture
 id buttonPanel
 id cache_measures
 id calendarView
@@ -3580,6 +3581,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recyclerView
 id recyclerViewTasks
 id reg_confirm_pword
 id reg_firstname
@@ -3631,6 +3633,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id sortLabel
 id sortSpinner
 id south
 id spacer
@@ -3677,6 +3680,7 @@ id taskInputTitle
 id taskPriority
 id taskPriorityIcon
 id taskPriorityText
+id taskStatus
 id taskTitle
 id text
 id text2
@@ -3686,6 +3690,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textViewCountdown
+id textViewNoTasks
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3880,9 +3885,11 @@ layout design_text_input_start_icon
 layout fragment_browse
 layout fragment_calendar
 layout fragment_edit_task
+layout fragment_history
 layout fragment_home
 layout fragment_search
 layout fragment_user
+layout history_task
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_task
@@ -4035,6 +4042,7 @@ string fab_transformation_sheet_behavior
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
+string fcm_fallback_notification_channel_label
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

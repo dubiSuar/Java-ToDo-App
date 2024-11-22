@@ -187,46 +187,84 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
     }
 
     private void saveTaskToFirebase(String taskTitle, String taskText) {
-        String loggedInUsername = requireActivity().getIntent().getStringExtra("username"); // Get logged-in username
-        DatabaseReference userTasksRef = FirebaseDatabase.getInstance().getReference("users").child(loggedInUsername).child("tasks");
-        String taskId = userTasksRef.push().getKey();
+        String loggedInUsername = requireActivity().getIntent().getStringExtra("username");
 
+        // Reference to the global "tasks" node
+        DatabaseReference globalTasksRef = FirebaseDatabase.getInstance().getReference("tasks");
+
+        // Reference to the user's "tasks" node
+        DatabaseReference userTasksRef = FirebaseDatabase.getInstance().getReference("users").child(loggedInUsername).child("tasks");
+
+        // Generate a unique task ID
+        String taskId = globalTasksRef.push().getKey();
+
+        // Create a map to store task data
         Map<String, Object> taskMap = new HashMap<>();
         taskMap.put("id", taskId);
         taskMap.put("title", taskTitle);
         taskMap.put("description", taskText);
         taskMap.put("priority", selectedPriority);
         taskMap.put("date", selectedDate);
+        taskMap.put("status", "In Progress");  // Initial status
+        taskMap.put("username", loggedInUsername);
 
         if (taskId != null) {
-            userTasksRef.child(taskId).setValue(taskMap)
+            // Save the task to the global "tasks" table
+            globalTasksRef.child(taskId).setValue(taskMap)
                     .addOnSuccessListener(aVoid -> {
-                        if (isAdded()) {
-                            Toast.makeText(requireContext(), "Task added successfully", Toast.LENGTH_SHORT).show();
-                            // Notify listener about the new task
-                            if (taskListener != null) {
-                                taskListener.onTaskAdded(taskTitle, taskText, selectedPriority, selectedDate);
-                            }
-                        }
+                        // Save the task to the user's specific "tasks" table
+                        userTasksRef.child(taskId).setValue(taskMap)
+                                .addOnSuccessListener(aVoid2 -> {
+                                    if (isAdded()) {
+                                        Toast.makeText(requireContext(), "Task added successfully", Toast.LENGTH_SHORT).show();
+                                        // Notify listener about the new task
+                                        if (taskListener != null) {
+                                            taskListener.onTaskAdded(taskTitle, taskText, selectedPriority, selectedDate);
+                                        }
+                                        // Update the "Complete" button visibility based on task status
+                                        updateCompleteButtonVisibility("In Progress");
+                                    }
+                                })
+                                .addOnFailureListener(e -> {
+                                    if (isAdded()) {
+                                        Toast.makeText(requireContext(), "Failed to store task in user's table", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                     })
                     .addOnFailureListener(e -> {
                         if (isAdded()) {
-                            Toast.makeText(requireContext(), "Failed to add task", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(requireContext(), "Failed to add task to global table", Toast.LENGTH_SHORT).show();
                         }
                     });
         }
     }
 
+    private void updateCompleteButtonVisibility(String taskStatus) {
+        Button completeButton = getView().findViewById(R.id.btnComplete);  // Replace with actual button ID
+        if (completeButton != null) {
+            if ("In Progress".equals(taskStatus)) {
+                completeButton.setVisibility(View.VISIBLE);
+            } else {
+                completeButton.setVisibility(View.GONE);
+            }
+        }
+    }
+
+
+
     private void editTaskToFirebase(String taskTitle, String taskText) {
         String loggedInUsername = requireActivity().getIntent().getStringExtra("username"); // Get logged-in username
+        // Reference to the user's tasks
         DatabaseReference userTasksRef = FirebaseDatabase.getInstance().getReference("users").child(loggedInUsername).child("tasks");
 
+        // Prepare the task data
         Map<String, Object> taskMap = new HashMap<>();
         taskMap.put("title", taskTitle);
         taskMap.put("description", taskText);
         taskMap.put("priority", selectedPriority);
         taskMap.put("date", selectedDate);
 
+        // Update the task data in the user's tasks node using the taskId
         if (taskId != null) {
             userTasksRef.child(taskId).updateChildren(taskMap)
                     .addOnSuccessListener(aVoid -> {
