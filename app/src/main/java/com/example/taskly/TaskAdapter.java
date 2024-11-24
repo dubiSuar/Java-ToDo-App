@@ -46,6 +46,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         holder.taskDescription.setText(task.getDescription());
         holder.taskDate.setText(task.getDate());
         holder.taskStatus.setText(task.getStatus());
+        holder.taskCategory.setText(task.getCategory());
 
         if (task.getStatus().equals("Completed")) {
             holder.btnComplete.setVisibility(View.GONE); // Hide button if completed
@@ -143,7 +144,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     }
 
     public static class TaskViewHolder extends RecyclerView.ViewHolder {
-        TextView taskTitle, taskDescription, taskPriority, taskDate, btnEdit, btnDelete, taskStatus, btnComplete;
+        TextView taskTitle, taskDescription, taskPriority, taskDate, btnEdit, btnDelete, taskStatus, btnComplete, taskCategory;
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -155,6 +156,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             btnDelete = itemView.findViewById(R.id.btnDelete);
             taskStatus = itemView.findViewById(R.id.taskStatus);
             btnComplete = itemView.findViewById(R.id.btnComplete);
+            taskCategory = itemView.findViewById(R.id.taskCategory);
         }
     }
 

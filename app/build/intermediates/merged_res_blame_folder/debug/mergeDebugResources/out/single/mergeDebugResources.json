@@ -16,12 +16,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\layout\\login.xml"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\layout_history_task.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\layout\\history_task.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\layout_register.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\layout\\register.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\layout_history_task.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\layout\\history_task.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -36,16 +36,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\xml\\data_extraction_rules.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.taskly.app-debug-41:/layout_fragment_calendar.xml.flat",
-        "source": "com.example.taskly.app-main-43:/layout/fragment_calendar.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\xml\\data_extraction_rules.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\layout_fragment_history.xml.flat",
@@ -216,12 +212,12 @@
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\layout_user_profile.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\layout\\user_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\layout_user_profile.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\layout\\user_profile.xml"
     },
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\layout_loading_modal.xml.flat",
@@ -258,5 +254,9 @@
     {
         "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-debug-41:\\drawable_browse.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\daemon\\8.9\\com.example.taskly.app-main-43:\\drawable\\browse.xml"
+    },
+    {
+        "merged": "com.example.taskly.app-debug-41:/layout_item_task.xml.flat",
+        "source": "com.example.taskly.app-main-43:/layout/item_task.xml"
     }
 ]

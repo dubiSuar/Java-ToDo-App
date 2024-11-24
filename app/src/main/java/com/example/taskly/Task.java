@@ -8,6 +8,8 @@ public class Task {
     private String id; // Assuming you have an id field
     private String status;
     private String username;
+    private String category; // Add this field
+
 
     // No-argument constructor
     public Task() {
@@ -15,7 +17,7 @@ public class Task {
     }
 
     // Parameterized constructor
-    public Task(String title, String description, String priority, String date, String id, String status) {
+    public Task(String title, String description, String priority, String date, String id, String status, String category) {
         this.title = title;
         this.description = description;
         this.priority = priority;
@@ -23,9 +25,15 @@ public class Task {
         this.id = id;
         this.status = status;
         this.username = username;
+        this.category = category;
     }
 
     // Getters and setters
+
+    public String getCategory() { return category; }
+
+    public void setCategory(String category) { this.category = category; }
+
     public String getStatus() {
         return status;
     }

@@ -3289,6 +3289,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btnAddTask
+id btnCategory
 id btnComplete
 id btnDate
 id btnDelete
@@ -3674,6 +3675,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id taskCategory
 id taskDate
 id taskDescription
 id taskInputTitle

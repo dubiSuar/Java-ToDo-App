@@ -45,6 +45,7 @@ id backButton
 id backgroundImage
 id bottom_navigation
 id btnAddTask
+id btnCategory
 id btnComplete
 id btnDate
 id btnDelete
@@ -84,6 +85,7 @@ id search_bar
 id sortLabel
 id sortSpinner
 id subheader_text
+id taskCategory
 id taskDate
 id taskDescription
 id taskInputTitle

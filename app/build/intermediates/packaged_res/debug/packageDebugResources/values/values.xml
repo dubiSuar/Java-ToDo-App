@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="sort_options">
+        <item>Categories</item>
         <item>Priority</item>
         <item>Date</item>
         <item>Title</item>

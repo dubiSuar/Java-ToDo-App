@@ -47,6 +47,8 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
     private Button btnPriority;
     private Button btnSaveTask;
     private String taskId; // Task ID to identify the task
+    private String selectedCategory = "Personal"; // Default category
+    private Button btnCategory;
 
     @Nullable
     @Override
@@ -65,6 +67,9 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
         // Initially hide the priority icon and text
         taskPriorityIcon.setVisibility(View.GONE);
         taskPriorityText.setVisibility(View.GONE);
+
+        btnCategory = view.findViewById(R.id.btnCategory);
+        btnCategory.setOnClickListener(v -> showCategorySelectionDialog());
 
         // Initialize Firebase Database reference
         tasksRef = FirebaseDatabase.getInstance().getReference("tasks");
@@ -168,6 +173,26 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
         taskPriorityText.setVisibility(View.VISIBLE); // Show the text
     }
 
+    private void showCategorySelectionDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle("Select Category")
+                .setItems(new String[]{"Personal", "School", "Healthcare"}, (dialog, which) -> {
+                    switch (which) {
+                        case 0:
+                            selectedCategory = "Personal";
+                            break;
+                        case 1:
+                            selectedCategory = "School";
+                            break;
+                        case 2:
+                            selectedCategory = "Healthcare";
+                            break;
+                    }
+                    btnCategory.setText(selectedCategory); // Update the button text
+                })
+                .show();
+    }
+
     private void showDatePickerDialog() {
         Calendar calendar = Calendar.getInstance();
         DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -207,6 +232,7 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
         taskMap.put("date", selectedDate);
         taskMap.put("status", "In Progress");  // Initial status
         taskMap.put("username", loggedInUsername);
+        taskMap.put("category", selectedCategory);
 
         if (taskId != null) {
             // Save the task to the global "tasks" table
@@ -263,6 +289,7 @@ public class TaskBottomSheetFragment extends BottomSheetDialogFragment {
         taskMap.put("description", taskText);
         taskMap.put("priority", selectedPriority);
         taskMap.put("date", selectedDate);
+        taskMap.put("category", selectedCategory);
 
         // Update the task data in the user's tasks node using the taskId
         if (taskId != null) {

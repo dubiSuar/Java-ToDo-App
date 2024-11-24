@@ -97,6 +97,12 @@
             android:padding="8dp"
             android:gravity="center_vertical"
             android:textColor="?attr/colorOnSurface" />
+
+        <Button
+            android:id="@+id/btnCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Category" />
     </LinearLayout>
 
     <Button
