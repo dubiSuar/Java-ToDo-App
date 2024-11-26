@@ -107,8 +107,10 @@ public class HomeFragment extends Fragment implements TaskBottomSheetFragment.Ta
             sortTasksByPriority();
         } else if ("Date".equals(selectedSortOption)) {
             sortTasksByDate();
-        } else if ("Title".equals(selectedSortOption)) {  // Handle "Sort by Title"
+        } else if ("Title".equals(selectedSortOption)) {
             sortTasksByTitle();
+        } else if ("Categories".equals(selectedSortOption)) { // Handle "Sort by Category"
+            sortTasksByCategory();
         }
         taskAdapter.notifyDataSetChanged();  // Update RecyclerView after sorting
     }
@@ -155,6 +157,15 @@ public class HomeFragment extends Fragment implements TaskBottomSheetFragment.Ta
             @Override
             public int compare(Task t1, Task t2) {
                 return t1.getTitle().compareTo(t2.getTitle());  // Sort titles alphabetically
+            }
+        });
+    }
+
+    private void sortTasksByCategory() {
+        Collections.sort(taskList, new Comparator<Task>() {
+            @Override
+            public int compare(Task t1, Task t2) {
+                return t1.getCategory().compareToIgnoreCase(t2.getCategory()); // Case-insensitive comparison
             }
         });
     }
