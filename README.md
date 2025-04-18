@@ -12,13 +12,13 @@
 ## 📸 Screenshots
 
 ### Welcome Screen
-![Welcome Screen](welcomescreen.jpg)
+![Welcome Screen](screenshots/welcomescreen.jpg)
 
 ### Calendar View
-![Calendar View](calendarview.jpg)
+![Calendar View](screenshots/calendarview.jpg)
 
 ### Task Overview
-![Task Overview](taskoverview.jpg)
+![Task Overview](screenshots/taskoverview.jpg)
 
 ## 🚀 Getting Started
 
