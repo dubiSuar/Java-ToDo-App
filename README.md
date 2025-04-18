@@ -11,14 +11,11 @@
 
 ## 📸 Screenshots
 
-### Welcome Screen
-![Welcome Screen](screenshots/welcomescreen.jpg)
-
-### Calendar View
-![Calendar View](screenshots/calendarview.jpg)
-
-### Task Overview
-![Task Overview](screenshots/taskoverview.jpg)
+<div align="center">
+  <img src="screenshots/welcomescreen.jpg" alt="Welcome Screen" width="200"/>
+  <img src="screenshots/calendarview.jpg" alt="Calendar View" width="200"/>
+  <img src="screenshots/taskoverview.jpg" alt="Task Overview" width="200"/>
+</div>
 
 ## 🚀 Getting Started
 
